@@ -3,7 +3,7 @@ package main
 type inputData struct {
 	Dimensions int        `json:"dimensions"`
 	Zombie     zombie     `json:"zombie"`
-	Creatures  []creature `json:"creature"`
+	Creatures  []creature `json:"creatures"`
 	Moves      string     `json:"moves"`
 }
 

@@ -44,7 +44,7 @@ go test .
         "x": 2,
         "y": 1
     },
-    "creature": [
+    "creatures": [
         {
             "x": 0,
             "y": 1
@@ -58,7 +58,7 @@ go test .
             "y": 1
         }
     ],
-    "Moves": "DLUURR"
+    "moves": "DLUURR"
 }
 ```
 
