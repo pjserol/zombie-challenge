@@ -1,5 +1,19 @@
 # Challenge Zombie Apocalypse
 
+The world consists of an n x n grid on which zombies and creatures live.
+
+At the beginning of the program, a single zombie awakes and begins to move around the
+grid.
+
+If a zombie moves on the same location as a creature, the creature is
+transformed into another zombie and zombies score one point.
+
+The zombie continues moving and infecting creatures until has performed all its moves.
+Once it has completed its movement, the first newly created zombie moves using the same
+sequence as the original zombie.
+
+Until all the newly created zombie moves using the same sequence as the original zombie.
+
 ## Requirements
 
 go installed
