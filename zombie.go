@@ -37,34 +37,34 @@ func (z *zombie) nextPosition(x, y int, dimensions int) error {
 	return nil
 }
 
-func (z *zombie) makeAllTheMoves(grid *Grid) {
-	for _, move := range grid.Moves {
+func (g *Grid) moveZombie(position int) {
+	for _, move := range g.Moves {
 		x, y, err := convertMoveToCoordinates(string(move))
 		if err != nil {
 			log.Fatal(err)
 		}
 
-		if err := z.nextPosition(x, y, grid.Dimensions); err != nil {
+		if err := g.Zombies[position].nextPosition(x, y, g.Dimensions); err != nil {
 			log.Fatal(err)
 		}
 
-		z.infect(grid)
+		g.infectCreatures(position)
 	}
 }
 
-func (z *zombie) infect(grid *Grid) {
-	for i, creature := range grid.Creatures {
-		infected := z.isInfected(creature)
+func (g *Grid) infectCreatures(position int) {
+	for i, creature := range g.Creatures {
+		infected := g.Zombies[position].isInfected(creature)
 		if infected {
-			grid.Creatures[i].infected = true
+			g.Creatures[i].infected = true
 
 			newZombie := zombie{
 				XPos: creature.XPos,
 				YPos: creature.YPos,
 			}
 
-			grid.Zombies = append(grid.Zombies, newZombie)
-			grid.Scores++
+			g.Zombies = append(g.Zombies, newZombie)
+			g.Scores++
 		}
 	}
 }
