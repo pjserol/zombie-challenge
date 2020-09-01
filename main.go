@@ -32,11 +32,7 @@ func main() {
 func runProgram(grid *Grid) outputData {
 	position := 0
 	for {
-		curZombie := grid.Zombies[position]
-
-		curZombie.makeAllTheMoves(grid)
-
-		grid.Zombies[position] = curZombie
+		grid.moveZombie(position)
 
 		position++
 
